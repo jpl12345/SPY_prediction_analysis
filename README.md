@@ -42,7 +42,7 @@ ML techniques used for prediction (subject to expansion and change):
 ### For the [prediction of daily S&amp;P500 index using XGBoost](/ml_for_spy_v2_ffill_daily_xgboost.ipynb)
 10 indicators were used to train XGBoost: GDP, CPIAUCSL, UNRATE, AMTMNO, POILWTIUSDM, AAA10Y, CSCICP03USM665S, T10Y3M, VIXCLS and BSCICP03USM665S. 
 
-For training the XGBoost model, data was split into random train and test subsets - 80% of the data was used for training, and the remaining 20% was used for validation. XGBoost was able to predict stock prices on a test data set with a Root Mean Squared Error (RMSE): 34.422484825156396 and R-squared (R2) Score: 0.9988822689809329.
+For training the XGBoost model, data was split into random train and test subsets - 80% of the data was used for training, and the remaining 20% was used for validation. XGBoost was able to predict S&amp;P500 on a test data set with a Root Mean Squared Error (RMSE): 34.422484825156396 and R-squared (R2) Score: 0.9988822689809329.
 
 ![Predicted VS SPY for test dataset](/figures/predictedvsSPY_Testdata.png)
 ![Predicted VS SPY for test and train dataset](/figures/predictedvsSPY_inclTrain.png)
@@ -77,7 +77,7 @@ Model-related:
 1. Fine-tuning and optimizing the XGBoost model
 2. Exploring other models such as LSTM
 
-Feature selection and optimzation:
+Feature selection and optimization:
 1. Exploring the effect of only keeping the top 3 indicators for the prediction of S&P500
 2. Exploring other indicators within FRED and beyond FRED.
 
