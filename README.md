@@ -89,3 +89,4 @@ https://scholarship.claremont.edu/cgi/viewcontent.cgi?article=3768&context=cmc_t
 https://github.com/eggrollofchaos/i_spy_etf_price_predictions
 https://github.com/snsten/SP500_Time-Series_Forecasting/tree/master
 http://www.econ2.jhu.edu/people/Duffee/jf_spreads.pdf
+https://www.sciencedirect.com/science/article/abs/pii/S0957417421010988
