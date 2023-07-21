@@ -48,7 +48,7 @@ For training the XGBoost model, data was split into random train and test subset
 
 ![Predicted VS SPY for test dataset](/figures/predictedvsSPY_Testdata.png)
 
-**Figure 1: Predicted vs Actual for the test dataset.** As the test dataset was not from a contigous section due to the usage of train_test_split, it is difficult to see the predicted vs actual performance for the test dataset. To better visualise the predicted vs actual performance of the model, please refer to figure 2.
+**Figure 1: Predicted vs Actual for the test dataset.** As the test dataset was not from a contigous time period due to the usage of train_test_split, it is difficult to see the predicted vs actual performance for the test dataset. To better visualise the predicted vs actual performance of the model, please refer to figure 2.
 
 
 
@@ -93,9 +93,16 @@ The 3rd most important feature was T10Y3M, 10-Year Treasury Constant Maturity Mi
 The goal of feature optimization was to reduce the number of features while preserving an acceptable level of performance (R2>0.99 on test data, and RMSE should be comparable to the 10-feature model).
 Using only the top 3 features for the model was insufficent, as the R2 value did not meet the threshold.
 
-Using the top 4 features nearly met the threshold of 0.99. But from the above graph, there are some years where the predicted value sharply deviated from the actual value. Therefore using 4 features is insufficent. 
+Using the top 4 features nearly met the threshold of 0.99. But in figure 8, there are some years where the predicted value sharply deviated from the actual value. Therefore using 4 features is insufficent. 
 
-The R2 value using the top 5 features met the threshold of 0.99. No sharp spikes between actual and predicted values were observed in the above graph. Moreover, the RMSE of using 5 features is only slightly worse than using 10 features.
+![predictedvsSPY_inclTrain-4Features](figures/predictedvsSPY_inclTrain-4Features.png)
+**Figure 8: Comparison of predicted vs actual for train and test data using the 4 feature model.**
+
+The R2 value using the top 5 features met the threshold of 0.99. No sharp spikes between actual and predicted values were observed in figure 9. Moreover, the RMSE of using 5 features is only slightly worse than using 10 features.
+
+![predictedvsSPY_inclTrain-5Features](figures/predictedvsSPY_inclTrain_withsubplots_for_top5.png)
+**Figure 9: Comparison of predicted vs actual for train and test data using the 4 feature model.**
+
 Hence, using the top 5 features produces an acceptable predictive model for SPY.
 
 ---
