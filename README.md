@@ -4,6 +4,9 @@
   * [About](#about)
   * [Contributors](#contributors)
   * [Discussion](#discussion)
+    * [Prediction of S&amp;P500 using XGBoost with 10 features](#prediction-of-sandp500-using-xgboost-with-10-features)
+    * [Validation of the 10-feature XGBoost Model](#validation-of-the-10-feature-xgboost-model)
+    * [Feature optimization](#feature-optimization)
   * [Outcome](#outcome)
   * [Future Work](#future-work)
   * [References](#references)
@@ -39,8 +42,8 @@ ML techniques used for prediction (subject to expansion and change):
 ---
 ## Discussion
 
-### For the [prediction of daily S&amp;P500 index using XGBoost - 10 features](/ml_for_spy_v2_ffill_daily_xgboost.ipynb)
-10 indicators from FRED were used to train XGBoost: GDP, CPIAUCSL, UNRATE, AMTMNO, POILWTIUSDM, AAA10Y, CSCICP03USM665S, T10Y3M, VIXCLS and BSCICP03USM665S. The indicators that were chosen are related to the US Treasury's yield curve (AAA10Y, T10Y3M) which has been [studied extensively as a predictor of recession](https://www.chicagofed.org/publications/chicago-fed-letter/2018/404), as well as GDP [with dips usually associated with recession](https://www.cnbc.com/2022/07/28/gdp-dips-sparking-recession-fears-whats-really-happening.html), CPI [which is an indicator of inflation](https://www.rba.gov.au/education/resources/explainers/inflation-and-its-measurement.html#:~:text=The%20most%20well%2Dknown%20indicator,and%20services%20consumed%20by%20households.), UNRATE [(unemployment rate) which usually sharply increases during recessions](https://www.bls.gov/opub/mlr/2021/article/unemployment-rises-in-2020-as-the-country-battles-the-covid-19-pandemic.htm), consumer confidence indicators, as well as business confidence indicators, and VIXCLS which measures the market's uncertainty.
+### Prediction of SANDP500 using XGBoost with 10 features
+10 indicators from FRED were used to [train XGBoost](/ml_for_spy_v2_ffill_daily_xgboost.ipynb): GDP, CPIAUCSL, UNRATE, AMTMNO, POILWTIUSDM, AAA10Y, CSCICP03USM665S, T10Y3M, VIXCLS and BSCICP03USM665S. The indicators that were chosen are related to the US Treasury's yield curve (AAA10Y, T10Y3M) which has been [studied extensively as a predictor of recession](https://www.chicagofed.org/publications/chicago-fed-letter/2018/404), as well as GDP [with dips usually associated with recession](https://www.cnbc.com/2022/07/28/gdp-dips-sparking-recession-fears-whats-really-happening.html), CPI [which is an indicator of inflation](https://www.rba.gov.au/education/resources/explainers/inflation-and-its-measurement.html#:~:text=The%20most%20well%2Dknown%20indicator,and%20services%20consumed%20by%20households.), UNRATE [(unemployment rate) which usually sharply increases during recessions](https://www.bls.gov/opub/mlr/2021/article/unemployment-rises-in-2020-as-the-country-battles-the-covid-19-pandemic.htm), consumer confidence indicators, as well as business confidence indicators, and VIXCLS which measures the market's uncertainty.
 
 Federal Reserve Economic Data (FRED) was chosen as the main data source because of its vast amount of reputable publicly available indicators easily accessible through FRED's API without a paywall. 
 
