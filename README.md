@@ -107,7 +107,7 @@ The R2 value using the top 5 features (0.9989) met the threshold of 0.99. No sha
 ![predictedvsSPY_inclTrain-5Features](figures/predictedvsSPY_inclTrain_withsubplots_for_top5.png)
 **Figure 9: Comparison of predicted vs actual for train and test data using the 4 feature model.**
 
-Unfortunately when validating the model, using the top 5 features produces an unacceptable error show in figure 10.
+Unfortunately when validating the model, using the top 5 features produces an unacceptable error shown in figure 10.
 
 ![validation_5f_xgb](figures/validationfrom2023_predictedvsSPY_inclTrain_for5featuremodel.png)
 **Figure 10: Comparison of predicted vs actual for 2023 SPY values for the 5 feature model.** The vertical red line marks when the model was trained.
