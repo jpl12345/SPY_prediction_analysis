@@ -107,16 +107,20 @@ The R2 value using the top 5 features (0.9989) met the threshold of 0.99. No sha
 ![predictedvsSPY_inclTrain-5Features](figures/predictedvsSPY_inclTrain_withsubplots_for_top5.png)
 **Figure 9: Comparison of predicted vs actual for train and test data using the 4 feature model.**
 
-Unfortunately when validating the model, using the top 5 features produces an unacceptable error shown in figure 10.
+Unfortunately when validating the model, using the top 5 features produces an unacceptable error shown in figure 10. This trend was observed for the models using the top 5-7 features, despite the R2 value of the test data meeting the threshold. Only after using more than 8 features, was the level of performance compared to the orignal 10 feature one comparable, as shown in figure 11. Therefore, the number of features used can be reduced to 8, which consists of: 'vix', 'AAAvstreasury', 't10y3m', 'unemp_rate', 'oil_prices', 'bus_confidence','mno', 'cpi'
 
 ![validation_5f_xgb](figures/validationfrom2023_predictedvsSPY_inclTrain_for5featuremodel.png)
 **Figure 10: Comparison of predicted vs actual for 2023 SPY values for the 5 feature model.** The vertical red line marks when the model was trained.
+
+
+![validation_8f_xgb](figures/validationfrom2023_predictedvsSPY_inclTrain_for8featuremodel.png)
+**Figure 11: Comparison of predicted vs actual for 2023 SPY values for the 8 feature model.** The vertical red line marks when the model was trained.
 
 ---
 
 ## Outcome
 
-Using XGBoost was able to predict S&amp;P500 with 10 features on a test data set with a Root Mean Squared Error (RMSE): 34.422484825156396 and R-squared (R2) Score: 0.9988822689809329. 
+Using XGBoost was able to predict S&amp;P500 with 10 features on a test data set with a Root Mean Squared Error (RMSE): 34.422484825156396 and R-squared (R2) Score: 0.9988822689809329. After feature optimization, the number of features used can be reduced to 8, which consists of: 'vix', 'AAAvstreasury', 't10y3m', 'unemp_rate', 'oil_prices', 'bus_confidence','mno', 'cpi'.
 
 
 ---
@@ -124,7 +128,7 @@ Using XGBoost was able to predict S&amp;P500 with 10 features on a test data set
 ## Future Work
 Model-related:
 1. Fine-tuning and optimizing the XGBoost model
-2. Exploring other models such as LSTM
+3. Exploring other models such as LSTM
 
 Feature selection and optimization:
 1. Exploring the effect of only keeping the top 3 indicators for the prediction of S&P500
