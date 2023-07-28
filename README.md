@@ -6,7 +6,7 @@
   * [Discussion](#discussion)
     * [Prediction of S&amp;P500 using XGBoost with 10 features](#prediction-of-sandp500-using-xgboost-with-10-features)
     * [Validation of the 10-feature XGBoost Model](#validation-of-the-10-feature-xgboost-model)
-    * [Feature optimization](#feature-optimization)
+    * [Feature optimization and validation of feature optimized models](#feature-optimization-and-validation-of-feature-optimized-models)
   * [Outcome](#outcome)
   * [Future Work](#future-work)
   * [References](#references)
@@ -92,7 +92,7 @@ The 3rd most important feature was T10Y3M, 10-Year Treasury Constant Maturity Mi
 
 <br>
 
-### Feature optimization
+### Feature optimization and validation of feature optimized models
 The goal of feature optimization was to reduce the number of features while preserving an acceptable level of performance (R2>0.99 on test data, and RMSE should be comparable to the 10-feature model).
 
 Using only the top 3 features for the model was insufficient, as the R2 value did not meet the threshold.
