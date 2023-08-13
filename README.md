@@ -5,8 +5,11 @@
   * [Contributors](#contributors)
   * [Discussion](#discussion)
     * [Prediction of S&amp;P500 using XGBoost with 10 features](#prediction-of-sandp500-using-xgboost-with-10-features)
-    * [Validation of the 10-feature XGBoost Model](#validation-of-the-10-feature-xgboost-model)
-    * [Feature optimization and validation of feature optimized models](#feature-optimization-and-validation-of-feature-optimized-models)
+      * [Validation of the 10-feature XGBoost Model](#validation-of-the-10-feature-xgboost-model)
+      * [Feature optimization and validation of feature optimized models](#feature-optimization-and-validation-of-feature-optimized-models)
+    * [Interpretation of XGBoost Feature Importance and Rule Derivation to Find Entry Points](#)
+      * [Challenges of Interpreting XGBoost Feature Importance](#)
+      * [Rule Derivations](#)
   * [Outcome](#outcome)
   * [Future Work](#future-work)
   * [References](#references)
@@ -107,7 +110,7 @@ The R2 value using the top 5 features (0.9989) met the threshold of 0.99. No sha
 ![predictedvsSPY_inclTrain-5Features](figures/predictedvsSPY_inclTrain_withsubplots_for_top5.png)
 **Figure 9: Comparison of predicted vs actual for train and test data using the 4 feature model.**
 
-Unfortunately when validating the model, using the top 5 features produces an unacceptable error shown in figure 10. This trend was observed for the models using the top 5-7 features, despite the R2 value of the test data meeting the threshold. Only after using more than 8 features, was the level of performance compared to the orignal 10 feature one comparable, as shown in figure 11. Therefore, the number of features used can be reduced to 8, which consists of: 'vix', 'AAAvstreasury', 't10y3m', 'unemp_rate', 'oil_prices', 'bus_confidence','mno', 'cpi'
+Unfortunately when validating the model, using the top 5 features produces an unacceptable error shown in figure 10. This trend was observed for the models using the top 5-7 features, despite the R2 value of the test data meeting the threshold. Only after using equal or more than 8 features, was the level of performance compared to the orignal 10 feature model comparable, as shown in figure 11. Therefore, the number of features used can be reduced to 8, which consists of: 'vix', 'AAAvstreasury', 't10y3m', 'unemp_rate', 'oil_prices', 'bus_confidence','mno', 'cpi'
 
 ![validation_5f_xgb](figures/validationfrom2023_predictedvsSPY_inclTrain_for5featuremodel.png)
 **Figure 10: Comparison of predicted vs actual for 2023 SPY values for the 5 feature model.** The vertical red line marks when the model was trained.
