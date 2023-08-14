@@ -175,6 +175,7 @@ The number of buying opportunites from 2000 to 2022 are: 275
 =====
 ```
 <br>
+
 **Semi-Intelligent Rule 1 - Buy When Close Price is Below Moving Average - 1.96 * SD**
 
 In this rule, the moving average and standard deviation of the close price of SPY over a rolling 365-day window was calculated. If the close price of SPY falls below the moving average minus 1.96 times the standard deviation, consider it a buying opportunity. This rule attempts to capture points where the price of SPY is significantly below its average and assumes a level of market volatility.
@@ -190,6 +191,7 @@ The number of buying opportunites from 2000 to 2020 are: 313
 =====
 ```
 <br>
+
 **Semi-Intelligent Rule 2 - Buy When Close Price is Below Moving Average - 2.576 * SD**
 
 Similar to Rule 2, this rule involves calculating the moving average and standard deviation of the close price of SPY over a rolling 365-day window. However, it uses a more stringent criterion, where a buying opportunity if the close price of SPY falls below the moving average minus 2.576 times the standard deviation. This rule aims to capture even more extreme market movements.
@@ -228,6 +230,7 @@ The number of buying opportunites from 2000 to 2022 are: 214
 =====
 ```
 <br>
+
 **Predictive Rule 2: Rule Incorporating Rule 1 and when Unemployment Rate is high and Oil Prices are low**
 
 This rule builds on the previous rule and includes additional conditions based on unemployment rate and oil prices. The moving average and standard deviation of the unemployment rate and oil prices was calculated over shorter rolling windows (12 months). The rule requires that both the unemployment rate and oil prices be below their moving averages plus 1.96 times the standard deviation. The intention is to identify buying opportunities when certain economic indicators indicate a negative outlook.
