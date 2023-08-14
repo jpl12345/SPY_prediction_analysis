@@ -162,7 +162,7 @@ The function calculates the average cost of SPY in a portfolio if the rule were 
 
 The perfect rule would yield the highest profit, and the maximum number of buying opportunities across all the years.
 
-Naive Rule of Buying SPY at the End of Every Month
+**Naive Rule of Buying SPY at the End of Every Month**
 
 This rule involves buying SPY at the end of every month and calculating the profit or loss based on the difference between the end-of-year price for a given year and the average price of SPY in the portfolio. This simple rule assumes a consistent investment strategy and serves as the benchmark for other rules to beat.
 The outcome of using the naïve rule is: 
@@ -193,6 +193,7 @@ The number of buying opportunites from 2000 to 2020 are: 313
 ```
 ![semiInt1](figures/entrypoints/semi_int_rule1.png)
 Figure 12: Visualization of the entry points using semi-intelligent rule 1 in red. 
+
 <br>
 
 **Semi-Intelligent Rule 2 - Buy When Close Price is Below Moving Average - 2.576 * SD**
