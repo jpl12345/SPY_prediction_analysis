@@ -263,11 +263,17 @@ Figure 16: Visualization of the entry points using predictive rule 2 in red.
 
 ### Summary on Entry Point Derivation
 
+Although both predictive rules did not surpass the semi-intelligent rule based on a standard deviation of 1.96 or greater, they still yielded higher profits compared to the naive rule. This observation emphasizes the value of leveraging machine learning models to inform trading decisions, even when the model's rules do not outperform simpler strategies. The predictive rules, by capturing nuanced relationships between economic indicators and market movements, showcased the potential for more sophisticated entry point identification.
+
+As part of future work, enhancing the interpretability of the XGBoost model's decisions could offer insights into the intricate relationships between features and target variables. Techniques such as SHAP (SHapley Additive exPlanations) values and partial dependence plots could be explored to provide a clearer understanding of the model's decision-making process. By visualizing the impact of individual features on predictions, these techniques could facilitate the derivation of more effective predictive rules. This approach aligns with the broader goal of refining trading strategies and uncovering deeper insights into the underlying dynamics of the stock market.
+
+In conclusion, the exploration of predictive rule derivations, guided by feature importance from the XGBoost model, showcased the potential for leveraging complex relationships between economic indicators to identify optimal entry points for purchasing SPY. While certain rules did not surpass simpler strategies, they contributed to my overall understanding of market dynamics and the potential for sophisticated trading strategies. 
+
 <br>
 
 ## Outcome
 
-Using XGBoost was able to predict S&amp;P500 with 10 features on a test data set with a Root Mean Squared Error (RMSE): 34.422484825156396 and R-squared (R2) Score: 0.9988822689809329. After feature optimization, the number of features used can be reduced to 8, which consists of: 'vix', 'AAAvstreasury', 't10y3m', 'unemp_rate', 'oil_prices', 'bus_confidence','mno', 'cpi'.
+Using XGBoost was able to predict S&amp;P500 with 10 features on a test data set with a Root Mean Squared Error (RMSE): 34.422484825156396 and R-squared (R2) Score: 0.9988822689809329. After feature optimization, the number of features used can be reduced to 8, which consists of: 'vix', 'AAAvstreasury', 't10y3m', 'unemp_rate', 'oil_prices', 'bus_confidence','mno', 'cpi'. Addtionally rules to derive entry points to maximise profit on SPY in a portfolio context were derived using the XGBoost model.
 
 
 ---
@@ -275,11 +281,12 @@ Using XGBoost was able to predict S&amp;P500 with 10 features on a test data set
 ## Future Work
 Model-related:
 1. Fine-tuning and optimizing the XGBoost model
-3. Exploring other models such as LSTM
+2. Exploring other models such as LSTM
+3. SHAP (SHapley Additive exPlanations) values and partial dependence plots exploration to derive improved predictive rules
 
 Feature selection and optimization:
-1. Exploring the effect of only keeping the top 3 indicators for the prediction of S&P500
-2. Exploring other indicators within FRED and beyond FRED.
+1. Exploring other indicators within FRED and beyond FRED.
+2. Exploring the effect of using only daily indicators instead of the current mix of daily, monthly and quarterly indicators.
 
 
 ---
