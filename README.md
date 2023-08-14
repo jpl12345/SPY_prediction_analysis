@@ -7,9 +7,10 @@
     * [Prediction of S&amp;P500 using XGBoost with 10 features](#prediction-of-sandp500-using-xgboost-with-10-features)
       * [Validation of the 10-feature XGBoost Model](#validation-of-the-10-feature-xgboost-model)
       * [Feature optimization and validation of feature optimized models](#feature-optimization-and-validation-of-feature-optimized-models)
-    * [Interpretation of XGBoost Feature Importance and Rule Derivation to Find Entry Points](#)
-      * [Challenges of Interpreting XGBoost Feature Importance](#)
-      * [Rule Derivations](#)
+    * [Interpretation of XGBoost Feature Importance and Rule Derivation to Find Entry Points](#interpretation-of-xgboost-feature-importance-and-rule-derivation-to-find-entry-points)
+      * [Challenges of Interpreting XGBoost Feature Importance](#challenges-of-interpreting-xgboost-feature-importance)
+      * [Rule Derivations](#rule-derivations)
+      * [Summary on Entry Point Derivation](#summary-on-entry-point-derivation)
   * [Outcome](#outcome)
   * [Future Work](#future-work)
   * [References](#references)
@@ -130,7 +131,7 @@ XGBoost is capable of capturing nonlinear relationships between features and tar
 XGBoost models consist of an ensemble of decision trees, each contributing to the final prediction. Interpreting individual trees independently might not provide a comprehensive understanding of the model's behavior, as predictions are made based on the combined output of multiple trees. As such. converting a complex tree structure into interpretable rules often requires simplification. This simplification can lead to ambiguity in rule interpretation and the potential loss of nuanced patterns.
 
 
-# Rule derivation
+### Rule derivations
 To evaluate the effectiveness of each rule the following function will be used:
 ```
 def eval_spy_stratergy(boy_year, eoy_year, end_of_year_price, dataframe_containing_spy_buying_opp, name_of_col_with_price, is_date_used_asIndex):
@@ -190,6 +191,8 @@ The number of buying opportunites from 2000 to 2020 are: 313
 9 years and 29 months with buying opportunities: [2000, 2001, 2002, 2008, 2009, 2016, 2018, 2020, 2022]
 =====
 ```
+![semiInt1](figures/entrypoints/semi_int_rule1.png)
+Figure 12: Visualization of the entry points using semi-intelligent rule 1 in red. 
 <br>
 
 **Semi-Intelligent Rule 2 - Buy When Close Price is Below Moving Average - 2.576 * SD**
@@ -206,10 +209,15 @@ The number of buying opportunites from 2000 to 2020 are: 103
 6 years and 16 months with buying opportunities: [2001, 2002, 2008, 2016, 2020, 2022]
 =====
 ```
+![semiInt2](figures/entrypoints/semi_int_rule2.png)
+Figure 13: Visualization of the entry points using semi-intelligent rule 2 in red. 
 
-There is a tradeoff between the number of years and months with buying opportunities and maximum profit with the standard deviation value chosen as shown in figure. Personally, I think using rule 1 (SD=1.96) yields an acceptable tradeoff between profit and number of buying opportunities.
+<br>
 
+There is a tradeoff between the number of years and months with buying opportunities and maximum profit with the standard deviation value chosen as shown in figure 14. Personally, I believe using rule 1 (SD=1.96) yields an acceptable tradeoff between profit and number of buying opportunities.
 
+![tradeoff1](figures/entrypoints/semi_int_rule_tradeoff.png)
+Figure 14: Profit/Loss, Number of Months, and Number of Years with Buying Opportunities vs. Standard Deviation Value. 
 
 #### Predictive Rules Based on Feature Importance from XGBoost
 
@@ -229,6 +237,9 @@ The number of buying opportunites from 2000 to 2022 are: 214
 9 years and 27 months with buying opportunities: [2000, 2001, 2007, 2008, 2011, 2015, 2016, 2019, 2020]
 =====
 ```
+![predRule1](figures/entrypoints/predictive_rule1.png)
+Figure 15: Visualization of the entry points using predictive rule 1 in red. 
+
 <br>
 
 **Predictive Rule 2: Rule Incorporating Rule 1 and when Unemployment Rate is high and Oil Prices are low**
@@ -245,6 +256,14 @@ The number of buying opportunites from 2000 to 2022 are: 88
 4 years and 7 months with buying opportunities: [2001, 2007, 2008, 2020]
 =====
 ```
+![predRule2](figures/entrypoints/predictive_rule2.png)
+Figure 16: Visualization of the entry points using predictive rule 2 in red. 
+
+<br>
+
+### Summary on Entry Point Derivation
+
+<br>
 
 ## Outcome
 
