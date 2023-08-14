@@ -174,23 +174,74 @@ The number of buying opportunites from 2000 to 2022 are: 275
 23 years and 275 months with buying opportunities: [2000, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022]
 =====
 ```
-Semi-Intelligent Rule 1 - Buy When Close Price is Below Moving Average - 1.96 * SD
+<br>
+**Semi-Intelligent Rule 1 - Buy When Close Price is Below Moving Average - 1.96 * SD**
 
-In this rule, you calculate the moving average and standard deviation of the close price of SPY over a rolling 365-day window. If the close price of SPY falls below the moving average minus 1.96 times the standard deviation, you consider it a buying opportunity. This rule attempts to capture points where the price of SPY is significantly below its average and assumes a level of market volatility.
-Semi-Intelligent Rule 2 - Buy When Close Price is Below Moving Average - 2.576 * SD
+In this rule, the moving average and standard deviation of the close price of SPY over a rolling 365-day window was calculated. If the close price of SPY falls below the moving average minus 1.96 times the standard deviation, consider it a buying opportunity. This rule attempts to capture points where the price of SPY is significantly below its average and assumes a level of market volatility.
 
-Similar to Rule 2, this rule involves calculating the moving average and standard deviation of the close price of SPY over a rolling 365-day window. However, it uses a more stringent criterion, where you consider it a buying opportunity if the close price of SPY falls below the moving average minus 2.576 times the standard deviation. This rule aims to capture even more extreme market movements.
+The outcome of using semi-intelligent rule 1 is:
+```
+=====
+The end of year price for 2020 is $3839.5
+The average price of SPY in your portfolio would be: $1287.4026194807059
+The number of buying opportunites from 2000 to 2020 are: 313
+% profit/loss = 198.24%
+9 years and 29 months with buying opportunities: [2000, 2001, 2002, 2008, 2009, 2016, 2018, 2020, 2022]
+=====
+```
+<br>
+**Semi-Intelligent Rule 2 - Buy When Close Price is Below Moving Average - 2.576 * SD**
+
+Similar to Rule 2, this rule involves calculating the moving average and standard deviation of the close price of SPY over a rolling 365-day window. However, it uses a more stringent criterion, where a buying opportunity if the close price of SPY falls below the moving average minus 2.576 times the standard deviation. This rule aims to capture even more extreme market movements.
+
+The outcome of semi-intelligent rule 2 is:
+```
+=====
+The end of year price for 2020 is $3839.5
+The average price of SPY in your portfolio would be: $1088.772617969698
+The number of buying opportunites from 2000 to 2020 are: 103
+% profit/loss = 252.64%
+6 years and 16 months with buying opportunities: [2001, 2002, 2008, 2016, 2020, 2022]
+=====
+```
+
+There is a tradeoff between the number of years and months with buying opportunities and maximum profit with the standard deviation value chosen as shown in figure. Personally, I think using rule 1 (SD=1.96) yields an acceptable tradeoff between profit and number of buying opportunities.
+
+
 
 #### Predictive Rules Based on Feature Importance from XGBoost
 
 This set of rules involves using feature importance from an XGBoost model to predict entry points for buying SPY. The rules are derived from analyzing relationships between SPY's close price and other relevant features.
-Predictive Rule 1: Buy When AAAvsTreasury and VIX Are High
 
-For this rule, you calculate the moving average and standard deviation of AAAvsTreasury and VIX over a rolling 365-day window. If the value of AAAvsTreasury is above the moving average plus 1.96 times the standard deviation, and the value of VIX is also above its moving average plus 1.96 times the standard deviation, you consider it a buying opportunity. This rule assumes that high values of these indicators may suggest a favorable buying point.
-Predictive Rule 2: Rule Incorporating Rule 1 and when Unemployment Rate is high and Oil Prices are low
+**Predictive Rule 1: Buy When AAAvsTreasury and VIX Are High**
 
-This rule builds on the previous rule and includes additional conditions based on unemployment rate and oil prices. You calculate the moving average and standard deviation of the unemployment rate and oil prices over shorter rolling windows (12 months). The rule requires that both the unemployment rate and oil prices be below their moving averages plus 1.96 times the standard deviation. The intention is to identify buying opportunities when certain economic indicators align with price movements.
+For this rule, the moving average and standard deviation of AAAvsTreasury and VIX was calculated over a rolling 365-day window. If the value of AAAvsTreasury is above the moving average plus 1.96 times the standard deviation, and the value of VIX is also above its moving average plus 1.96 times the standard deviation, consider it a buying opportunity. This rule assumes that high values of these indicators may suggest a favorable buying point.
 
+The outcome of predictive rule 1 is:
+```
+=====
+The end of year price for 2022 is $3839.5
+The average price of SPY in your portfolio would be: $1491.9916801096124
+The number of buying opportunites from 2000 to 2022 are: 214
+% profit/loss = 157.34%
+9 years and 27 months with buying opportunities: [2000, 2001, 2007, 2008, 2011, 2015, 2016, 2019, 2020]
+=====
+```
+<br>
+**Predictive Rule 2: Rule Incorporating Rule 1 and when Unemployment Rate is high and Oil Prices are low**
+
+This rule builds on the previous rule and includes additional conditions based on unemployment rate and oil prices. The moving average and standard deviation of the unemployment rate and oil prices was calculated over shorter rolling windows (12 months). The rule requires that both the unemployment rate and oil prices be below their moving averages plus 1.96 times the standard deviation. The intention is to identify buying opportunities when certain economic indicators indicate a negative outlook.
+
+The outcome of predictive rule 2 is:
+```
+=====
+The end of year price for 2022 is $3839.5
+The average price of SPY in your portfolio would be: $1459.3629531860352
+The number of buying opportunites from 2000 to 2022 are: 88
+% profit/loss = 163.09%
+4 years and 7 months with buying opportunities: [2001, 2007, 2008, 2020]
+=====
+```
 
 ## Outcome
 
