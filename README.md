@@ -220,6 +220,8 @@ There is a tradeoff between the number of years and months with buying opportuni
 ![tradeoff1](figures/entrypoints/semi_int_rule_tradeoff.png)
 Figure 14: Profit/Loss, Number of Months, and Number of Years with Buying Opportunities vs. Standard Deviation Value. 
 
+<br>
+
 #### Predictive Rules Based on Feature Importance from XGBoost
 
 This set of rules involves using feature importance from an XGBoost model to predict entry points for buying SPY. The rules are derived from analyzing relationships between SPY's close price and other relevant features.
@@ -271,6 +273,8 @@ As part of future work, enhancing the interpretability of the XGBoost model's de
 In conclusion, the exploration of predictive rule derivations, guided by feature importance from the XGBoost model, showcased the potential for leveraging complex relationships between economic indicators to identify optimal entry points for purchasing SPY. While certain rules did not surpass simpler strategies, they contributed to my overall understanding of market dynamics and the potential for sophisticated trading strategies. 
 
 <br>
+
+---
 
 ## Outcome
 
